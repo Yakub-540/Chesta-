@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>A Special Surprise ❤️</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Georgia, serif;
+    background: #fff4f5;
+    color: #71394c;
+    text-align: center;
+}
+
+/* Welcome Section */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 25px;
+    background: linear-gradient(135deg, #ffe0e8, #fff8f3, #ffd5e1);
+}
+
+.heart {
+    font-size: 65px;
+    animation: heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+h1 {
+    font-size: clamp(38px, 8vw, 65px);
+    color: #d6336c;
+    margin: 20px 0;
+}
+
+.hero p {
+    max-width: 600px;
+    line-height: 1.8;
+    font-size: 18px;
+    margin-bottom: 25px;
+}
+
+button, .btn {
+    background: #e84379;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    transition: 0.3s;
+}
+
+button:hover, .btn:hover {
+    background: #bd285d;
+    transform: translateY(-3px);
+}
+
+/* Common Sections */
+section {
+    padding: 65px 18px;
+}
+
+h2 {
+    color: #d6336c;
+    font-size: clamp(30px, 5vw, 42px);
+    margin-bottom: 18px;
+}
+
+.description {
+    max-width: 650px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+/* Photo Gallery */
+.gallery-section {
+    background: #fff0f3;
+}
+
+.upload-button {
+    margin-bottom: 30px;
+}
+
+#imageUpload {
+    display: none;
+}
+
+.gallery {
+    max-width: 1050px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+}
+
+.photo-card {
+    background: white;
+    padding: 10px 10px 18px;
+    box-shadow: 0 8px 22px #d98da322;
+    transition: 0.3s;
+}
+
+.photo-card:nth-child(odd) {
+    transform: rotate(-2deg);
+}
+
+.photo-card:nth-child(even) {
+    transform: rotate(2deg);
+}
+
+.photo-card:hover {
+    transform: rotate(0deg) translateY(-6px);
+}
+
+.photo-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    background: #ffe0e8;
+}
+
+.caption {
+    padding: 14px 5px 0;
+    font-style: italic;
+    font-size: 16px;
+    outline: none;
+}
+
+/* Love Letter */
+.letter {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: #fff;
+    border: 1px solid #f4c5d2;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px #d98da322;
+    text-align: left;
+}
+
+.letter-content {
+    white-space: pre-wrap;
+    font-size: 18px;
+    line-height: 2;
+    outline: none;
+}
+
+/* Gift Section */
+.gift-section {
+    background: #ffeaf0;
+}
+
+.gift {
+    font-size: 100px;
+    cursor: pointer;
+    display: inline-block;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+.surprise {
+    max-width: 600px;
+    margin: 25px auto 0;
+    padding: 30px;
+    background: white;
+    border-radius: 18px;
+    line-height: 1.9;
+    animation: appear 0.6s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Message Section */
+.message-box {
+    max-width: 600px;
+    margin: auto;
+}
+
+input, textarea {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    margin: 12px 0;
+    border: 1px solid #efb5c5;
+    border-radius: 10px;
+    font-size: 16px;
+    background: white;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+footer {
+    padding: 30px 15px;
+    color: #a45c73;
+}
+
+/* Mobile Layout */
+@media (max-width: 650px) {
+    .gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 12px;
+    }
+
+    .letter {
+        padding: 22px;
+    }
+
+    .photo-card {
+        padding: 7px 7px 13px;
+    }
+
+    .caption {
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- WELCOME PAGE -->
+<header class="hero">
+    <div class="heart">❤️</div>
+
+    <h1>For My<br>Favourite Person</h1>
+
+    <p>
+        Some feelings are too special for an ordinary message.
+        So I made this little surprise just for you.
+        You make ordinary moments feel magical. 💗
+    </p>
+
+    <a href="#memories" class="btn">Open Your Surprise 💌</a>
+</header>
+
+<!-- PHOTO GALLERY -->
+<section class="gallery-section" id="memories">
+
+    <h2>Our Beautiful Memories 📸</h2>
+
+    <p class="description">
+        Every picture tells a story.
+        Add your favourite photos and make this page special.
+    </p>
+
+    <label for="imageUpload" class="btn upload-button">
+        + Add Your Photos
+    </label>
+
+    <input
+        type="file"
+        id="imageUpload"
+        accept="image/*"
+        multiple
+    >
+
+    <div class="gallery" id="gallery">
+
+        <div class="photo-card">
+            <img
+                src="https://placehold.co/400x500/ffe0e8/c44570?text=Your+Photo+1"
+                alt="Memory 1"
+            >
+            <p class="caption" contenteditable="true">
+                Our favourite memory ❤️
+            </p>
+        </div>
+
+        <div class="photo-card">
+            <img
+                src="https://placehold.co/400x500/ffdce6/c44570?text=Your+Photo+2"
+                alt="Memory 2"
+            >
+            <p class="caption" contenteditable="true">
+                A beautiful moment 💕
+            </p>
+        </div>
+
+        <div class="photo-card">
+            <img
+                src="https://placehold.co/400x500/ffe9ed/c44570?text=Your+Photo+3"
+                alt="Memory 3"
+            >
+            <p class="caption" contenteditable="true">
+                Forever in my memories 🌸
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- LOVE LETTER -->
+<section>
+    <h2>A Little Message From My Heart 💌</h2>
+
+    <p class="description">
+        Tap the letter text below to edit it with your own words.
+    </p>
+
+    <div class="letter">
+        <div class="letter-content" contenteditable="true">
+Hey, My Favourite Person ❤️
+
+I just wanted to remind you how special you are to me.
+
+Thank you for all the little moments, the smiles, the laughs,
+and the beautiful memories.
+
+You have a special place in my heart, and even the smallest
+moments with you can become my favourite memories.
+
+I hope this little surprise makes you smile.
+
+Stay happy, keep smiling, and always remember that you are special.
+
+With lots of love,
+Your Favourite Person 💗
+        </div>
+    </div>
+</section>
+
+<!-- SURPRISE GIFT -->
+<section class="gift-section">
+
+    <h2>One Last Surprise 🎁</h2>
+
+    <p class="description">
+        There's something special waiting for you.
+        Tap the gift to open it!
+    </p>
+
+    <div
+        class="gift"
+        id="gift"
+        role="button"
+        tabindex="0"
+        aria-label="Open surprise gift"
+    >
+        🎁
+    </div>
+
+    <div class="surprise hidden" id="surprise">
+
+        <h2>Surprise! 💖</h2>
+
+        <p id="surpriseMessage">
+            You are one of my favourite reasons to smile.
+
+            Life is full of little moments, and I hope we make
+            many more beautiful memories together.
+
+            Here's a little reminder that you are appreciated
+            more than words can say. ❤️
+        </p>
+
+        <br>
+
+        <button id="changeMessage">
+            Change Surprise Message
+        </button>
+
+    </div>
+</section>
+
+<!-- WRITE A MESSAGE -->
+<section>
+
+    <h2>Write Something Special 💗</h2>
+
+    <p class="description">
+        Write a message and copy it to save or share.
+    </p>
+
+    <form class="message-box" id="messageForm">
+
+        <input
+            type="text"
+            id="senderName"
+            placeholder="Your name (optional)"
+        >
+
+        <textarea
+            id="personalMessage"
+            placeholder="Write your message here..."
+        ></textarea>
+
+        <button type="submit">Copy My Message 💌</button>
+
+        <p id="status" aria-live="polite"></p>
+
+    </form>
+
+</section>
+
+<footer>
+    Made with ❤️ and lots of love.
+    <br><br>
+    A little page for a very special person.
+</footer>
+
+<script>
+
+// ADD PHOTOS FROM YOUR DEVICE
+const imageUpload = document.getElementById("imageUpload");
+const gallery = document.getElementById("gallery");
+
+imageUpload.addEventListener("change", function () {
+
+    const files = Array.from(this.files || [])
+        .filter(file => file.type.startsWith("image/"));
+
+    if (files.length === 0) return;
+
+    gallery.innerHTML = "";
+
+    files.forEach(function (file, index) {
+
+        const reader = new FileReader();
+
+        reader.onload = function (event) {
+
+            const card = document.createElement("div");
+            card.className = "photo-card";
+
+            const img = document.createElement("img");
+            img.src = event.target.result;
+            img.alt = "Uploaded memory " + (index + 1);
+
+            const caption = document.createElement("p");
+            caption.className = "caption";
+            caption.contentEditable = "true";
+            caption.textContent = "A special memory ❤️";
+
+            card.appendChild(img);
+            card.appendChild(caption);
+
+            gallery.appendChild(card);
+        };
+
+        reader.readAsDataURL(file);
+    });
+
+});
+
+// OPEN AND CLOSE THE GIFT
+const gift = document.getElementById("gift");
+const surprise = document.getElementById("surprise");
+
+function toggleGift() {
+    surprise.classList.toggle("hidden");
+
+    gift.textContent = surprise.classList.contains("hidden")
+        ? "🎁"
+        : "💝";
+}
+
+gift.addEventListener("click", toggleGift);
+
+gift.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        toggleGift();
+    }
+});
+
+// CUSTOMIZE THE SURPRISE MESSAGE
+document.getElementById("changeMessage")
+    .addEventListener("click", function () {
+
+        const oldMessage =
+            document.getElementById("surpriseMessage").innerText;
+
+        const newMessage = prompt(
+            "Enter your personal surprise message:",
+            oldMessage
+        );
+
+        if (newMessage !== null && newMessage.trim() !== "") {
+            document.getElementById("surpriseMessage").innerText =
+                newMessage;
+        }
+    });
+
+// COPY A PERSONAL MESSAGE
+document.getElementById("messageForm")
+    .addEventListener("submit", async function (event) {
+
+        event.preventDefault();
+
+        const name =
+            document.getElementById("senderName").value.trim();
+
+        const message =
+            document.getElementById("personalMessage").value.trim();
+
+        if (!message) {
+            document.getElementById("status").textContent =
+                "Please write a message first.";
+            return;
+        }
+
+        const finalMessage =
+            (name ? name + " says:\n" : "") + message;
+
+        try {
+            await navigator.clipboard.writeText(finalMessage);
+
+            document.getElementById("status").textContent =
+                "Message copied successfully! ❤️";
+
+        } catch (error) {
+            document.getElementById("personalMessage").value =
+                finalMessage;
+
+            document.getElementById("status").textContent =
+                "Please select and copy your message manually.";
+        }
+    });
+
+</script>
+
+</body>
+</html>
